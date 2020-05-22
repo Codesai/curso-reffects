@@ -31,6 +31,10 @@ export default function registerTodoListEvents() {
     return state.set({ todos: todos });
   });
 
+  registerEventHandler('chooseFilter', function chooseFilter(coeffects, payload) {
+      return state.set({ filter: payload });
+  });
+
   registerEventHandler(
     'todoClicked',
     function todoClicked(coeffects, { id, text, isDone }) {

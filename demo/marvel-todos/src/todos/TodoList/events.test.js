@@ -57,6 +57,14 @@ describe('events', () => {
     );
   });
 
+  test('filter selected', () => {
+    const chooseFilter = getEventHandler('chooseFilter');
+
+    const effects = chooseFilter({}, 'all');
+
+    expect(effects).toEqual(state.set({ 'filter': 'all' }));
+  });
+
   test('todoClicked when todo is done', () => {
     const id = 1;
     const todoClicked = getEventHandler('todoClicked');

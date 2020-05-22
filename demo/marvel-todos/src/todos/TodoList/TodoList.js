@@ -1,8 +1,10 @@
 import React from 'react';
 import { subscribe } from 'reffects-store';
 import TodoItem from './TodoItem';
+import {dispatch} from "reffects";
+import visibleTodosSelector from "./selectors";
 
-export function TodoList({ todos }) {
+export function TodoList({ todos, chooseFilter }) {
   return (
     <React.Fragment>
       <ul>
@@ -19,13 +21,13 @@ export function TodoList({ todos }) {
         )}
       </ul>
       <section>
-        <button>
+        <button onClick={() => chooseFilter('all')}>
           All
         </button>
-        <button>
+        <button onClick={() => chooseFilter('done')}>
           Done
         </button>
-        <button>
+        <button onClick={() => chooseFilter('undone')}>
           Undone
         </button>
       </section>
@@ -37,7 +39,12 @@ export default subscribe(
   TodoList, 
   function(state) {
     return {
-      todos: state.todos
+      todos: visibleTodosSelector(state)
     };
-  }
+  },
+    {
+        chooseFilter(filter) {
+            dispatch({ id: 'chooseFilter', payload: filter });
+        }
+    }
 );
