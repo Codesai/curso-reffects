@@ -6,7 +6,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scripts": "3.4.1",
-    "reffects": "0.1.17",
+    "reffects": "0.1.18",
     "reffects-batteries": "0.2.0",
     "reffects-store": "0.3.0",
     "reselect": "^4.0.0"
