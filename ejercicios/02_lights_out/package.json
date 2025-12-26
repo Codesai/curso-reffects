@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "reffects": "0.1.18",
     "reffects-batteries": "0.2.0",
     "reffects-store": "0.3.0"
